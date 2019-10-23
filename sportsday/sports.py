@@ -1,11 +1,16 @@
 import pandas as pd
 
-df = pd.read_csv('PFP Sports Day Registration.csv')
+df = pd.read_csv(r'sportsday\PFP Sports Day Registration.csv')
+individual = df[df['Type of registration'] == 'Individual'].dropna(axis=1)
 ultimate = df[df['Sport'] == 'Ultimate Frisbee'].dropna(axis=1)
-ultimate.to_csv('Ultimate Teams.csv', index=False)
 bball = df[df['Sport'] == '3v3 Basketball'].dropna(axis=1)
-bball.to_csv('Basketball Teams.csv', index=False)
 cbal = df[df['Sport'] == "Captain's Ball"].dropna(axis=1)
-cbal.to_csv("Captain's Ball.csv", index=False)
 ssc = df[df['Sport'] == "Street Soccer"].dropna(axis=1)
-ssc.to_csv("Street Soccer.csv", index=False)
+# To CSV
+individual.to_csv(r"sportsday\output\Individual List.csv", index=False)
+ultimate.to_csv(r"sportsday\output\Ultimate Teams.csv", index=False)
+bball.to_csv(r'sportsday\output\Basketball Teams.csv', index=False)
+cbal.to_csv(r"sportsday\output\Captain's Ball.csv", index=False)
+ssc.to_csv(r"sportsday\output\Street Soccer.csv", index=False)
+
+print(individual)
