@@ -16,6 +16,11 @@ ssc = df[df['Sport'] == "Street Soccer"].dropna(axis=1)
 # To CSV
 with pd.ExcelWriter(r'sportsday\output\Compiled.xlsx') as pp:
     individual.to_excel(pp, index=False, sheet_name='Individuals')
+    ind_ssc.to_excel(pp, index=False, sheet_name='Individual Street Soccer')
+    ind_bball.to_excel(pp, index=False, sheet_name='Individual Basketball')
+    ind_cbal.to_excel(pp, index=False, sheet_name="Individual Captain's Ball")
+    ind_fris.to_excel(pp, index=False, sheet_name='Individual Ultimate Frisbee')
+
     ultimate.to_excel(pp, index=False, sheet_name='Ultimate Frisbee Team')
     bball.to_excel(pp, index=False, sheet_name='Basketball Team')
     cbal.to_excel(pp, index=False, sheet_name='Captains Ball Team')
