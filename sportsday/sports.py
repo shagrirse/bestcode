@@ -2,7 +2,13 @@ import pandas as pd
 import openpyxl
 
 df = pd.read_csv(r'sportsday\PFP Sports Day Registration.csv')
+#individuals
 individual = df[df['Type of registration'] == 'Individual'].dropna(axis=1)
+ind_ssc = individual[individual['Desired sport'] == "Street Soccer"]
+ind_bball = individual[individual['Desired sport'] == "3 v 3 Basketball"]
+ind_cbal = individual[individual['Desired sport'] == "Captain's Ball"]
+ind_fris = individual[individual['Desired sport'] == "Ultimate Frisbee"]
+#teams
 ultimate = df[df['Sport'] == 'Ultimate Frisbee'].dropna(axis=1)
 bball = df[df['Sport'] == '3v3 Basketball'].dropna(axis=1)
 cbal = df[df['Sport'] == "Captain's Ball"].dropna(axis=1)
